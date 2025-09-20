@@ -1,19 +1,4 @@
-<div class="wiki-layout">
-  <aside class="sidebar">
-    {% if site.data.navigation %}
-      <nav class="sidebar-nav">
-        <ul>
-          {% for item in site.data.navigation %}
-            <li>
-              <a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-      </nav>
-    {% endif %}
-  </aside>
-
-  <main class="wiki-content">
-    {{ content }}
-  </main>
-</div>
+---
+layout: git-wiki-default
+---
+{{ content }}
