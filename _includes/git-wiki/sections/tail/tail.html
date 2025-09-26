@@ -32,4 +32,16 @@
 
 {% if site.inc_after_tail %}
 {% include {{ site.inc_after_tail }} %}
+<script>
+  function darkModeSetBodyBg() {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.body.style.backgroundColor = '#1e1e1e';
+      document.body.classList.add('darkmode--activated');
+    } else {
+      document.body.style.backgroundColor = '#ffffff';
+      document.body.classList.remove('darkmode--activated');
+    }
+  }
+</script>
+
 {% endif %}
