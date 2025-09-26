@@ -398,3 +398,109 @@ screen and (max-width: 480px) {
 body.darkmode--activated img, body.darkmode--activated .darkmode-ignore {
   mix-blend-mode: difference;
 }
+
+/* Custom wiki layout with sidebar */
+.wiki-layout {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 1rem;
+  background-color: #fff;
+}
+
+body.darkmode--activated .wiki-layout {
+  background-color: #1e1e1e;
+}
+
+.sidebar {
+  width: 250px;
+  margin-right: 2rem;
+  background-color: #f8f8f8;
+  border-right: 1px solid #ddd;
+  padding: 1rem;
+  font-size: 0.95rem;
+}
+
+body.darkmode--activated .sidebar {
+  background-color: #2a2a2a;
+  border-color: #444;
+  color: #ccc;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sidebar-nav li {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-nav a {
+  color: #d2691e;
+  text-decoration: none;
+}
+
+.sidebar-nav a:hover {
+  text-decoration: underline;
+}
+
+/* Active link highlighting */
+.sidebar-nav a.active {
+  font-weight: bold;
+  color: #005a9c;
+  border-left: 3px solid #005a9c;
+  padding-left: 0.5em;
+}
+
+/* Indentation for nested items */
+.nav-sublist {
+  margin-left: 1em;
+  padding-left: 0.5em;
+  border-left: 1px dashed #ccc;
+}
+
+.nav-subitem a {
+  font-size: 0.9rem;
+}
+
+/* Optional icon styling */
+.sidebar-nav .icon {
+  margin-right: 0.4em;
+  font-size: 0.9em;
+  vertical-align: middle;
+}
+
+.wiki-content {
+  flex: 1;
+  max-width: 800px;
+  padding: 1rem;
+  background-color: #fff;
+  color: #333;
+}
+
+body.darkmode--activated .wiki-content {
+  background-color: #1e1e1e;
+  color: #ccc;
+}
+
+/* Collapsible sidebar sections */
+.sidebar-nav details {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-nav summary {
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+}
+
+body.darkmode--activated .sidebar-nav summary {
+  color: #ccc;
+}
+
+.sidebar-nav .nav-sublist {
+  margin-left: 1em;
+  padding-left: 0.5em;
+  border-left: 1px dashed #ccc;
+}
