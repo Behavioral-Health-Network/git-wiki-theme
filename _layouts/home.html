@@ -1,5 +1,48 @@
-// Create git-wiki-theme/_layouts/home.html
----
-layout: git-wiki-default
----
-{{ content }}
+<ul class="nav-list">
+  {% for item in site.data.navigation %}
+    {% assign should_open = false %}
+    {% if item.children %}
+      {% for child in item.children %}
+        {% if page.url == child.url %}
+          {% assign should_open = true %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+
+    {% if item.children and item.collapsible %}
+      <li class="nav-item collapsible">
+        <details {% if should_open %}open{% endif %}>
+          <summary>{{ item.title }}</summary>
+          <ul class="nav-sublist">
+            {% for child in item.children %}
+              <li class="nav-subitem">
+                <a href="{{ site.baseurl }}{{ child.url }}" class="nav-sublink{% if page.url == child.url %} active{% endif %}">
+                  {{ child.title }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </details>
+      </li>
+    {% elsif item.children %}
+      <li class="nav-item">
+        <span class="nav-header">{{ item.title }}</span>
+        <ul class="nav-sublist">
+          {% for child in item.children %}
+            <li class="nav-subitem">
+              <a href="{{ site.baseurl }}{{ child.url }}" class="nav-sublink{% if page.url == child.url %} active{% endif %}">
+                {{ child.title }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
+    {% else %}
+      <li class="nav-item">
+        <a href="{{ site.baseurl }}{{ item.url }}" class="nav-link{% if page.url == item.url %} active{% endif %}">
+          {{ item.title }}
+        </a>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
