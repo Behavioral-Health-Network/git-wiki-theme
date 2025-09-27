@@ -18,7 +18,9 @@
               {% assign should_open = false %}
               {% if item.children %}
                 {% for child in item.children %}
-                  {% if page.url == child.url %}
+                  {% assign normalized_page_url = page.url | append: "/" %}
+                  {% assign normalized_child_url = child.url | append: "/" %}
+                  {% if normalized_page_url == normalized_child_url %}
                     {% assign should_open = true %}
                   {% endif %}
                 {% endfor %}
