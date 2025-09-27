@@ -449,6 +449,20 @@ body.darkmode--activated td {
   color: #ccc;
 }
 
+/* extends dark mode styling to outer containers */
+html.darkmode--activated,
+body.darkmode--activated,
+body.darkmode--activated .wiki-layout,
+body.darkmode--activated .wiki-content {
+  background-color: #000;
+  color: #ccc;
+}
+
+/* minimizes vertical gaps on short pages */
+body.darkmode--activated .wiki-content {
+  min-height: 80vh;
+}
+
 /* disable dark mode on images */
 body.darkmode--activated img, body.darkmode--activated .darkmode-ignore {
   mix-blend-mode: difference;
