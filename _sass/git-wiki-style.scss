@@ -394,6 +394,20 @@ screen and (max-width: 480px) {
   z-index: 500;
 }
 
+/* adds a dark mode override for code readability */
+body.darkmode--activated code {
+  color: #ccc;
+  background-color: #2a2a2a;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+/* adds a dark mode override for preformatted code blocks */
+body.darkmode--activated pre {
+  background-color: #2a2a2a;
+  color: #ccc;
+}
+
 /* disable dark mode on images */
 body.darkmode--activated img, body.darkmode--activated .darkmode-ignore {
   mix-blend-mode: difference;
