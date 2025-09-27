@@ -408,6 +408,37 @@ body.darkmode--activated pre {
   color: #ccc;
 }
 
+/* adds a dark mode override for Markdown headers */
+body.darkmode--activated h1, 
+body.darkmode--activated h2, 
+body.darkmode--activated h3 {
+  color: #ccc;
+}
+
+/** adds a dark mode override for Markdown emphasis elements */
+body.darkmode--activated strong {
+  color: #ccc;
+}
+
+body.darkmode--activated em {
+  color: #ccc;
+}
+
+body.darkmode--activated del {
+  color: #999;
+  text-decoration-color: #666;
+}
+
+body.darkmode--activated blockquote {
+  color: #bbb;
+  border-left: 2px solid #666;
+}
+
+body.darkmode--activated mark {
+  background-color: #444;
+  color: #fff;
+}
+
 /* disable dark mode on images */
 body.darkmode--activated img, body.darkmode--activated .darkmode-ignore {
   mix-blend-mode: difference;
