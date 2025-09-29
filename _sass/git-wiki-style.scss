@@ -573,3 +573,17 @@ body.darkmode--activated .sidebar-nav summary {
   padding-left: 0.5em;
   border-left: 1px dashed #ccc;
 }
+
+/* Adds rules for handling details blocks */
+details summary {
+  display: block;
+  cursor: pointer;
+}
+
+details[open] summary::after {
+  content: "▼";
+}
+
+details summary::after {
+  content: "▶";
+}
