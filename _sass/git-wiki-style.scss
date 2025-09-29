@@ -582,8 +582,10 @@ details summary {
 
 details[open] summary::after {
   content: "▼";
+  padding-left: 0.5em;
 }
 
 details summary::after {
   content: "▶";
+  padding-left: 0.5em;
 }
