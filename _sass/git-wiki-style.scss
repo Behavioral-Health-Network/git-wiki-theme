@@ -403,6 +403,22 @@ body.darkmode--activated code {
   font-weight: 500;
 }
 
+/* Override Rouge syntax colors in dark mode */
+body.darkmode--activated .highlight .k,  /* keyword */
+body.darkmode--activated .highlight .kc, /* keyword constant */
+body.darkmode--activated .highlight .kc, /* constant like true/false/null */
+body.darkmode--activated .highlight .nb, /* built-in name */
+body.darkmode--activated .highlight .o,  /* operator like --trace */
+body.darkmode--activated .highlight .s,  /* string */
+body.darkmode--activated .highlight .ss, /* symbol string */
+body.darkmode--activated .highlight .nv, /* variable name */
+body.darkmode--activated .highlight .mi, /* integer */
+body.darkmode--activated .highlight .bp  /* builtin pseudo */
+{
+  color: #ff69b4 !important; /* pink for visibility */
+}
+
+
 /* adds a dark mode override for preformatted code blocks */
 body.darkmode--activated pre {
   background-color: #2a2a2a;
